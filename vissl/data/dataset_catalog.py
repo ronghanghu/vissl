@@ -229,7 +229,7 @@ def register_datasets(json_catalog_path):
         json_catalog_path (str): the path to the json dataset catalog
     """
     if PathManager.exists(json_catalog_path):
-        logging.info(f"Registering datasets: {json_catalog_path}")
+        # logging.info(f"Registering datasets: {json_catalog_path}")
         VisslDatasetCatalog.clear()
         VisslDatasetCatalog.register_json(json_catalog_path)
     if VisslDatasetCatalog.has_data("voc2007_folder") or VisslDatasetCatalog.has_data(
