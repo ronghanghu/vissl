@@ -237,10 +237,10 @@ class GenericSSLDataset(VisslDatasetBase):
                 # In this case we use the labels inferred from the directory structure
                 # We enforce that the data source also be a disk folder in this case
                 assert self.data_sources[idx] == self.label_sources[idx]
-                if local_rank == 0:
-                    logging.info(
-                        f"Using {label_source} labels from {self.data_paths[idx]}"
-                    )
+                # if local_rank == 0:
+                #     logging.info(
+                #         f"Using {label_source} labels from {self.data_paths[idx]}"
+                #     )
                 # Use the ImageFolder object created when loading images.
                 # We do not create it again since it can be an expensive operation.
                 labels = [x[1] for x in self.data_objs[idx].image_dataset.samples]
